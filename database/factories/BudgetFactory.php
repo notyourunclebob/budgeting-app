@@ -18,7 +18,8 @@ class BudgetFactory extends Factory
     {
         return [
             'title' => fake()->realText(15),
-            'limit' => fake()->numberBetween(100, 3000),
+            'limit' => fake()->numberBetween(200, 1000),
+            // 'limit' => 100,
         ];
     }
 }

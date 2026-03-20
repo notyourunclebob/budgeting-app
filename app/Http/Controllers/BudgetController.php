@@ -12,7 +12,9 @@ class BudgetController extends Controller
      */
     public function index()
     {
-        //
+        $budgets = Budget::withSum('expenses', 'amount')->get();
+
+        return view('index', ['budgets' => $budgets]);
     }
 
     /**
