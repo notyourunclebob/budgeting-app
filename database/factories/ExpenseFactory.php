@@ -19,7 +19,9 @@ class ExpenseFactory extends Factory
     {
         return [
             'description' => fake()->realText(30),
-            'amount' => fake()->randomFloat(2, 5, 500),
+            'amount' => fake()->randomFloat(2, 5, 100),
+            // 'amount' => 10,
+            // 'amount' => 100,
             'budget_id' => Budget::all()->random()->id,
         ];
     }

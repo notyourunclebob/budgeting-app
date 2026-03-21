@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('description', 255);
-            $table->float('amount', 2);
+            $table->decimal('amount', 10, 2);
             $table->foreignId('budget_id')->constrained()->onDelete('cascade');
         });
     }
