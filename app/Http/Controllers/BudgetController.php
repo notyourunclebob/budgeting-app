@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Budget;
+use App\Models\Expense;
 use Illuminate\Http\Request;
 
 class BudgetController extends Controller
@@ -14,7 +15,7 @@ class BudgetController extends Controller
     {
         $budgets = Budget::withSum('expenses', 'amount')->get();
 
-        return view('index', ['budgets' => $budgets]);
+        return view('budget.index', ['budgets' => $budgets]);
     }
 
     /**
@@ -38,7 +39,11 @@ class BudgetController extends Controller
      */
     public function show(Budget $budget)
     {
-        //
+        $expenses = Expense::where('budget_id', $budget->id)->paginate(10);
+
+        $budget->loadSum('expenses', 'amount');
+
+        return view('budget.show', ['expenses' => $expenses], compact('budget'));
     }
 
     /**

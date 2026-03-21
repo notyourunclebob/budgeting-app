@@ -22,7 +22,7 @@ enum BudgetColour: string
         return match($this) {
             self::Over => '#ef4444',
             self::Max => '#f59e0b',
-            self::Under => '#22c55e',
+            self::Under => '#519872',
         };
     }
 }
