@@ -1,5 +1,8 @@
 <x-layouts.app :title="$budget->title">
     <main class="pt-12 space-y-12">
+        <div>
+            <a href="{{ route('budget.index') }}" class="button">Back to Budgets</a>
+        </div>
         <div class="card">
             <div class='card-body space-y-4'>
                 <div class="flex justify-between">
