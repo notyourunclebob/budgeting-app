@@ -2,7 +2,7 @@
     <div>
         <main class="w-full space-y-12">
             <div class="pt-12">
-                <a class="button">Add Budget</a>
+                <a href="{{ route('budget.create') }}" class="button">Add Budget</a>
             </div>
             @if ($budgets->isEmpty())
                 <p>No budgets yet...</p>
