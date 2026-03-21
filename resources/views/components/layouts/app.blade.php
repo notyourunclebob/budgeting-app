@@ -13,13 +13,16 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 
-<body class="bg-gray-100">
-    <header class="bg-gray-900 text-white mb-12" id="top">
+<body class="bg-gray-100 text-shadowgray">
+    <header class="bg-granite text-ash" id="top">
         <nav class="container mx-auto px-4 py-4 flex gap-4">
-            <a class="text-lg font-medium">Budgets</a>
-            <a class="text-lg font-medium">Expenses</a>
+            <a class="text-md font-medium">Budgets</a>
+            <a class="text-md font-medium">Expenses</a>
         </nav>
     </header>
+    <div class="bg-sage text-white text-xl font-bold">
+        <h1 class="container mx-auto px-4 py-4">{{ $title }}</h1>
+    </div>
 
     <div class="container mx-auto px-4">
         {{ $slot }}
