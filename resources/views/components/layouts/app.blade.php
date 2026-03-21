@@ -14,7 +14,7 @@
 </head>
 
 <body class="bg-gray-100">
-    <header class="bg-gray-900 text-white mb-12">
+    <header class="bg-gray-900 text-white mb-12" id="top">
         <nav class="container mx-auto px-4 py-4 flex gap-4">
             <a class="text-lg font-medium">Budgets</a>
             <a class="text-lg font-medium">Expenses</a>

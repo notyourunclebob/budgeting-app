@@ -22,6 +22,10 @@
                                     style="width: {{ $budget->percentage_used }}%; background-color: {{ $budget->budget_colour->colour() }}">
                                 </div>
                             </div>
+                            <div class="flex justify-between">
+                                <a href="#top">Back to top ^</a>
+                                {{-- <a href="{{ route('budget.show'), $budget }}">View details ></a> --}}
+                            </div>
                         </div>
                     @endforeach
                 </div>
