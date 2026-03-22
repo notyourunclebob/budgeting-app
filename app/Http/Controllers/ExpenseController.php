@@ -53,15 +53,21 @@ class ExpenseController extends Controller
      */
     public function edit(Expense $expense)
     {
-        //
+        $budgets = Budget::all();
+
+        return view('expense.edit', ['budgets' => $budgets], compact('expense'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Expense $expense)
+    public function update(ExpenseRequest $request, Expense $expense)
     {
-        //
+        $validated = $request->validated();
+
+        $expense->update($validated);
+
+        return redirect()->route('expense.index', $expense)->with('status', 'Expense updated');
     }
 
     /**

@@ -1,7 +1,7 @@
 <x-layouts.app title="Edit budget details">
     <main class="pt-12 space-y-12">
         <div>
-            <a href="{{ route('budget.show', $budget) }}" class="button">Back to Budget Details</a>
+            <a href="{{ route('budget.show', $budget) }}" class="button w-fit">Back to Budget Details</a>
         </div>
 
         <x-status />

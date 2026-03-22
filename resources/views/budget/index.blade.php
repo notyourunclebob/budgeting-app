@@ -2,7 +2,7 @@
     <div>
         <main class="w-full space-y-12 pb-12">
             <div class="pt-12">
-                <a href="{{ route('budget.create') }}" class="button">Add Budget</a>
+                <a href="{{ route('budget.create') }}" class="button w-fit">Add Budget</a>
             </div>
 
             <x-status />
