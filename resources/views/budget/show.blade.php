@@ -1,16 +1,19 @@
 <?php $name = $budget->title; ?>
 
-<x-layouts.app :title="$budget->title . ' Details'">
+<x-layouts.app title="Budget Details">
     <main class="pt-12 space-y-12">
         <div>
             <a href="{{ route('budget.index') }}" class="button">Back to Budgets</a>
         </div>
+
+        <x-status />
+
         <div class="card">
             <div class='card-body space-y-4'>
                 <div class="flex justify-between">
                     <div class="text-xl">{{ $budget->title }}</div>
                     <div class="flex gap-2">
-                        <a href="#top" class="button">Edit</a>
+                        <a href="{{ route('budget.edit', $budget) }}" class="button">Edit</a>
                         <button onclick="openModal('{{ route('budget.destroy', $budget) }}')"
                             class="button bg-red-600 hover:bg-red-400">Delete</button>
                     </div>
