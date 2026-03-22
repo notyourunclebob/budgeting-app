@@ -3,6 +3,9 @@
         <div>
             <a href="{{ route('budget.index') }}" class="button">Back to Budgets</a>
         </div>
+
+        <x-status />
+
         <form class="card p-6 space-y-4" action="{{ route('budget.store') }}" method="post">
             @csrf
             <div>
@@ -26,8 +29,5 @@
                 <button class="button" type="submit">Create</button>
             </div>
         </form>
-
-        <x-status />
-
     </main>
 </x-layouts.app>

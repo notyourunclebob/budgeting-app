@@ -1,9 +1,12 @@
 <x-layouts.app title="Budgets">
     <div>
-        <main class="w-full space-y-12">
+        <main class="w-full space-y-12 pb-12">
             <div class="pt-12">
                 <a href="{{ route('budget.create') }}" class="button">Add Budget</a>
             </div>
+
+            <x-status />
+
             @if ($budgets->isEmpty())
                 <p>No budgets yet...</p>
             @else
