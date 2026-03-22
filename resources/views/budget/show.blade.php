@@ -1,3 +1,5 @@
+<?php $name = $budget->title; ?>
+
 <x-layouts.app :title="$budget->title . ' Details'">
     <main class="pt-12 space-y-12">
         <div>
@@ -9,8 +11,8 @@
                     <div class="text-xl">{{ $budget->title }}</div>
                     <div class="flex gap-2">
                         <a href="#top" class="button">Edit</a>
-                        <a href="{{ route('budget.show', $budget) }}"
-                            class="button bg-red-600 hover:bg-red-400">Delete</a>
+                        <button onclick="openModal('{{ route('budget.destroy', $budget) }}')"
+                            class="button bg-red-600 hover:bg-red-400">Delete</button>
                     </div>
                 </div>
                 <div>
@@ -39,5 +41,7 @@
             @endforeach
         </table>
         <div>{{ $expenses->links() }}</div>
+
+        @include('partials.modal-confirm')
     </main>
 </x-layouts.app>
