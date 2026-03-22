@@ -36,7 +36,7 @@ class BudgetController extends Controller
 
         Budget::create($validated);
 
-        return redirect()->route('budget.create')->with('satus', 'New budget category created');
+        return redirect()->route('budget.create')->with('status', 'New budget category created');
     }
 
     /**

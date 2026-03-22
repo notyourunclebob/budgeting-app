@@ -26,5 +26,8 @@
                 <button class="button" type="submit">Create</button>
             </div>
         </form>
+
+        <x-status />
+
     </main>
 </x-layouts.app>
