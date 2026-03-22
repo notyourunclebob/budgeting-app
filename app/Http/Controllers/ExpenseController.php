@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ExpenseRequest;
+use App\Models\Budget;
 use App\Models\Expense;
 use Illuminate\Http\Request;
 
@@ -12,7 +14,9 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        //
+        $expenses = Expense::with('budget')->paginate(50);
+
+        return view('expense.index', compact('expenses'));
     }
 
     /**
@@ -20,15 +24,20 @@ class ExpenseController extends Controller
      */
     public function create()
     {
-        //
+        $budgets = Budget::all();
+        return view('expense.create', ['budgets' => $budgets]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ExpenseRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        Expense::create($validated);
+
+        return redirect()->route('expense.create')->with('status', 'New expense created');
     }
 
     /**
@@ -44,15 +53,21 @@ class ExpenseController extends Controller
      */
     public function edit(Expense $expense)
     {
-        //
+        $budgets = Budget::all();
+
+        return view('expense.edit', ['budgets' => $budgets], compact('expense'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Expense $expense)
+    public function update(ExpenseRequest $request, Expense $expense)
     {
-        //
+        $validated = $request->validated();
+
+        $expense->update($validated);
+
+        return redirect()->route('expense.index', $expense)->with('status', 'Expense updated');
     }
 
     /**
@@ -60,6 +75,8 @@ class ExpenseController extends Controller
      */
     public function destroy(Expense $expense)
     {
-        //
+        $expense->delete();
+
+        return redirect()->route('expense.index')->with('status', "Expense for $expense->description deleted");
     }
 }

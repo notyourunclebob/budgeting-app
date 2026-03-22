@@ -15,9 +15,11 @@
 
 <body class="bg-gray-100 text-shadowgray">
     <header class="bg-granite text-ash" id="top">
-        <nav class="container mx-auto px-4 py-4 flex gap-4">
-            <a class="text-md font-medium">Budgets</a>
-            <a class="text-md font-medium">Expenses</a>
+        <nav class="container mx-auto px-4 flex gap-4">
+            <a href="{{ route('budget.index') }}"
+                class="{{ request()->routeIs('budget.*') ? 'nav-link-active' : 'nav-link' }} py-4 text-md font-medium">Budgets</a>
+            <a href="{{ route('expense.index') }}"
+                class="{{ request()->routeIs('expense.*') ? 'nav-link-active' : 'nav-link' }} py-4 text-md font-medium">Expenses</a>
         </nav>
     </header>
     <div class="bg-sage text-white text-xl font-bold">

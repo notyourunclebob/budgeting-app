@@ -25,7 +25,6 @@
     .button {
         display: flex;
         align-items: center;
-        width:fit-content;
 
         border-radius: 0.25rem;
         padding: 0.2rem 1rem;
@@ -87,6 +86,14 @@
         }
     }
 
+    .form-select {
+        background-color: var(--color-gray-200);
+        border-radius: 0.5rem;
+        padding: 0.2rem 0.5rem;
+
+        color: var(--color-gray-600);
+    }
+
     .form-text {
         background-color: var(--color-gray-200);
         border-radius: 0.5rem;
@@ -138,5 +145,23 @@
         width: 100%;
         max-width: 400px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-link {
+        border:none;
+        color: var(--color-sage);
+
+        &:hover{
+            border-bottom-color: var(--color-sage) ;
+            border-bottom-style: solid;
+            border-bottom-width: 3px;
+        }
+    }
+
+    .nav-link-active {
+        color: var(--color-ash);
+        border-bottom-color: var(--color-ash) ;
+        border-bottom-style: solid;
+        border-bottom-width: 3px;
     }
 }
