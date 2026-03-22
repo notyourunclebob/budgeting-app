@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBudgetRequest;
 use App\Models\Budget;
 use App\Models\Expense;
 use Illuminate\Http\Request;
@@ -23,15 +24,19 @@ class BudgetController extends Controller
      */
     public function create()
     {
-        //
+        return view('budget.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreBudgetRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        Budget::create($validated);
+
+        return redirect()->route('budget.create')->with('status', 'New budget category created');
     }
 
     /**

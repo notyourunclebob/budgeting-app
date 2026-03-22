@@ -14,15 +14,24 @@
     --color-granite: #3B5249;
     --color-seagreen: #519872;
     --color-shadowgray: #34252F;
+    --color-cherry: #ef4444;
 }
 
 @layer components {
     .button {
+        display: flex;
+        align-items: center;
+        width:fit-content;
+
         border-radius: 0.25rem;
-        padding: 0.5rem 1rem;
+        padding: 0.2rem 1rem;
 
         background-color: var(--color-granite);
         color: white;
+
+        cursor: pointer;
+
+        &:hover { background-color: var(--color-seagreen); }
     }
 
     .card {
@@ -33,9 +42,7 @@
 
         overflow: hidden;
 
-        & .card-body {
-            margin: 1rem;
-        }
+        & .card-body { margin: 1rem; }
     }
 
     .percent-bar {
@@ -44,7 +51,7 @@
         border-radius: 0.2rem;
         overflow: hidden;
 
-        background-color: rgb(218, 218, 218);
+        background-color: var(--color-gray-200);
     }
 
     .percent-fill {
@@ -72,9 +79,40 @@
 
         & tr:last-child{
 
-            td {
-                border:none
-            }
+            td { border:none }
         }
+    }
+
+    .form-text {
+        background-color: var(--color-gray-200);
+        border-radius: 0.5rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .form-money {
+        display: flex;
+        background-color: var(--color-gray-200);
+        border-radius: 0.5rem;
+        overflow: hidden;
+
+        & input {
+            padding: 0.2rem 0.5rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        & span {
+            padding: 0.2rem 1rem;
+            color: var(--color-gray-400);
+            border-right-color: var(--color-gray-400);
+            border-right-style: solid;
+            border-right-width: 1px;
+        }
+    }
+
+    .alert {
+        padding: 0.75rem 1rem;
+        border-radius: 0.375rem;
+        margin-bottom: 1rem;
+        background-color: var(--color-gray-200);
     }
 }
