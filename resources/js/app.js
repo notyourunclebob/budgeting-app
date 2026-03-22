@@ -1,8 +1,9 @@
 import './bootstrap';
 
 // confoirm modal script
-window.openModal = function(actionUrl) {
+window.openModal = function(actionUrl, name) {
     document.getElementById('confirm-modal-form').action = actionUrl;
+    document.getElementById('confirm-modal-name').textContent = name;
     document.getElementById('confirm-modal').style.display = 'flex';
 }
 

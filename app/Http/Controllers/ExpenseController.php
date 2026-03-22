@@ -12,7 +12,9 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        //
+        $expenses = Expense::with('budget')->paginate(50);
+
+        return view('expense.index', compact('expenses'));
     }
 
     /**
@@ -60,6 +62,8 @@ class ExpenseController extends Controller
      */
     public function destroy(Expense $expense)
     {
-        //
+        $expense->delete();
+
+        return redirect()->route('expense.index')->with('status', "Expense for $expense->description deleted");
     }
 }
