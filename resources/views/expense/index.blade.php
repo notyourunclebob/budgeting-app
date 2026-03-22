@@ -1,7 +1,7 @@
 <x-layouts.app title="Expenses">
     <main class="pt-12 space-y-12">
         <div>
-            <a class="button">Add expense</a>
+            <a href="{{ route('expense.create') }}" class="button">Add expense</a>
         </div>
 
         <x-status />

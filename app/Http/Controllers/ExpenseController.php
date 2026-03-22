@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ExpenseRequest;
+use App\Models\Budget;
 use App\Models\Expense;
 use Illuminate\Http\Request;
 
@@ -22,15 +24,20 @@ class ExpenseController extends Controller
      */
     public function create()
     {
-        //
+        $budgets = Budget::all();
+        return view('expense.create', ['budgets' => $budgets]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ExpenseRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        Expense::create($validated);
+
+        return redirect()->route('expense.create')->with('status', 'New expense created');
     }
 
     /**

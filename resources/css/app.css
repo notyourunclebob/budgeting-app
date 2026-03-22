@@ -87,6 +87,14 @@
         }
     }
 
+    .form-select {
+        background-color: var(--color-gray-200);
+        border-radius: 0.5rem;
+        padding: 0.2rem 0.5rem;
+
+        color: var(--color-gray-600);
+    }
+
     .form-text {
         background-color: var(--color-gray-200);
         border-radius: 0.5rem;
