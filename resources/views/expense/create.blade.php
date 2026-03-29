@@ -31,7 +31,10 @@
                     <div>
                         <select class="form-select" name="budget_id">
                             @foreach ($budgets as $budget)
-                                <option value="{{ $budget->id }}">{{ $budget->title }}</option>
+                                <option value="{{ $budget->id }}"
+                                    {{ old('budget_id') == $budget->id ? 'selected' : '' }}>
+                                    {{ $budget->title }}
+                                </option>
                             @endforeach
                         </select>
                     </div>
