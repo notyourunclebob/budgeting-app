@@ -67,14 +67,14 @@
         width: 100%;
 
         & th {
-            padding: 0.5rem 1rem;
+            padding: 0.5rem;
             text-align: start;
             background-color: var(--color-sage);
             color: white;
         }
 
         & td {
-            padding: 0.5rem 1rem;
+            padding: 0.5rem;
             border-bottom-width: 1px;
             border-bottom-color: var(--color-ash);
             border-bottom-style: solid;

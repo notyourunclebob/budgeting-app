@@ -26,7 +26,7 @@
         <h1 class="container mx-auto px-4 py-4">{{ $title }}</h1>
     </div>
 
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto sm:px-4">
         {{ $slot }}
     </div>
 
